@@ -1,15 +1,18 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
-    <title>Lista de Exámenes</title>
+  <meta charset="UTF-8">
+  <title>Exámenes</title>
 </head>
 <body>
-    <h1>Lista de Exámenes</h1>
-    <ul>
-        {% for exam in exams %}
-            <li>{{ exam.exam_name }} - {{ exam.exam_date }}</li>
-        {% endfor %}
-    </ul>
+  <a href="{% url 'home' %}">« Volver</a>
+  <h1>Lista de Exámenes</h1>
+  <ul>
+    {% for exam in exams %}
+      <li>{{ exam.exam_name }} – {{ exam.exam_date }}</li>
+    {% endfor %}
+  </ul>
 </body>
 </html>
+
 

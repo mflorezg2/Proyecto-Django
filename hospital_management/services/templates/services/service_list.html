@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Servicios</title>
+</head>
+<body>
+  <a href="{% url 'home' %}">« Volver</a>
+  <h1>Lista de Servicios</h1>
+  <ul>
+    {% for service in services %}
+      <li>
+        {{ service.service_id }} – {{ service.service_date }}<br>
+        Resumen: {{ service.summary }}
+      </li>
+    {% endfor %}
+  </ul>
+</body>
+</html>

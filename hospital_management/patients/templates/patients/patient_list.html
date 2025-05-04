@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Pacientes</title>
+</head>
+<body>
+  <a href="{% url 'home' %}">« Volver</a>
+  <h1>Lista de Pacientes</h1>
+  <ul>
+    {% for patient in patients %}
+      <li>
+        {{ patient.name }} ({{ patient.patient_id }})<br>
+        Edad: {{ patient.age }}, Sexo: {{ patient.gender }}
+      </li>
+    {% endfor %}
+  </ul>
+</body>
+</html>
