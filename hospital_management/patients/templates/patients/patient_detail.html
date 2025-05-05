@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% load static %}
 
 {% block content %}
   <h1>Detalle de {{ patient.name }}</h1>
@@ -13,4 +14,5 @@
     <li><strong>Condiciones médicas:</strong> {{ patient.medical_conditions }}</li>
   </ul>
 {% endblock %}
+
 
