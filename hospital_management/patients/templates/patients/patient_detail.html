@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Detalle Paciente</title>
+</head>
+<body>
+  <h1>Detalle de {{ patient.name }}</h1>
+  <ul>
+    <li><strong>ID:</strong> {{ patient.patient_id }}</li>
+    <li><strong>Nombre:</strong> {{ patient.name }}</li>
+    <li><strong>Fecha de nacimiento:</strong> {{ patient.birth_date }}</li>
+    <li><strong>Edad:</strong> {{ patient.age }}</li>
+    <li><strong>Sexo:</strong> {{ patient.gender }}</li>
+    <li><strong>Tipo de sangre:</strong> {{ patient.blood_type }}</li>
+    <li><strong>Alergias:</strong> {{ patient.allergies }}</li>
+    <li><strong>Condiciones médicas:</strong> {{ patient.medical_conditions }}</li>
+  </ul>
+  <a href="{% url 'patient_list' %}">« Volver a la lista</a>
+</body>
+</html>
