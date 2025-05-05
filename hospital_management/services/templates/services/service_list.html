@@ -1,11 +1,6 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <title>Servicios</title>
-</head>
-<body>
-  <a href="{% url 'home' %}">« Volver</a>
+{% extends "base.html" %}
+
+{% block content %}
   <h1>Lista de Servicios</h1>
   <ul>
     {% for service in services %}
@@ -15,5 +10,5 @@
       </li>
     {% endfor %}
   </ul>
-</body>
-</html>
+{% endblock %}
+

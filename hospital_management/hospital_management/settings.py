@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'services',
     'patients',
     'diagnoses',
+    'social_django',
 ]
 
 MIDDLEWARE = [
@@ -135,4 +136,35 @@ STATIC_ROOT = BASE_DIR / 'staticfiles'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+# … lo que ya tengas en settings.py …
+
+# Static files
+STATIC_URL = '/static/'
+STATICFILES_DIRS = [ BASE_DIR / 'static' ]
+STATIC_ROOT = BASE_DIR / 'staticfiles'
+
+# Default primary key field type
+DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+#  ─── CONFIGURACIÓN DE AUTH0 / SOCIAL AUTH ────────────────────────────────────
+
+# URLs de login/logout
+LOGIN_URL = '/login/auth0'
+LOGIN_REDIRECT_URL = '/'
+LOGOUT_REDIRECT_URL = 'https://TU_DOMINIO_AUTH0/v2/logout?returnTo=http://TU_IP:8000/'
+
+# Credenciales y opciones de Auth0
+SOCIAL_AUTH_AUTH0_DOMAIN        = 'TU_DOMINIO_AUTH0'
+SOCIAL_AUTH_AUTH0_KEY           = 'TU_CLIENT_ID'
+SOCIAL_AUTH_AUTH0_SECRET        = 'TU_CLIENT_SECRET'
+SOCIAL_AUTH_AUTH0_SCOPE         = ['openid', 'profile', 'email', 'role']
+SOCIAL_AUTH_TRAILING_SLASH      = False
+
+# Backends de autenticación
+AUTHENTICATION_BACKENDS = [
+    'hospital_management.auth0backend.Auth0',
+    'django.contrib.auth.backends.ModelBackend',
+]
+
 

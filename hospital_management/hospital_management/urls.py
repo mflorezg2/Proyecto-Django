@@ -26,6 +26,8 @@ urlpatterns = [
     path('services/', include('services.urls')),
     path('patients/', include('patients.urls')),
     path('diagnoses/', include('diagnoses.urls')),
+    path('', include('django.contrib.auth.urls')),
+    path('', include('social_django.urls')),  # Auth0 endpoints
 ]
 
 

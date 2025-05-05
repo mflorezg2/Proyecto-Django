@@ -1,22 +1,8 @@
-{% load static %}
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <!-- … -->
-</head>
-<body>
-    <header>
-        <nav>
-            <a href="{% url 'exam_list' %}">Exámenes</a> |
-            <a href="{% url 'service_list' %}">Servicios</a> |
-            <a href="{% url 'patient_list' %}">Pacientes</a> |
-            <a href="{% url 'diagnosis_list' %}">Diagnósticos</a>
-        </nav>
-    </header>
-    <main>
-        <h1>Bienvenido a la Hospital App</h1>
-        <img src="{% static 'img/hospital.png' %}" alt="Hospital">
-    </main>
-</body>
-</html>
+{% extends "base.html" %}
+
+{% block content %}
+  <h1>Bienvenido a la Hospital App</h1>
+  <img src="{% static 'img/dashboard.png' %}" alt="Dashboard">
+{% endblock %}
+
 

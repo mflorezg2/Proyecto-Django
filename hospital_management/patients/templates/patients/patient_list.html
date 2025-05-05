@@ -1,12 +1,8 @@
 {% load static %}
-<!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <title>Pacientes</title>
-</head>
-<body>
-  <h1>Pacientes</h1>
+{% extends "base.html" %}
+
+{% block content %}
+  <h1>Lista de Pacientes</h1>
   <a href="{% url 'patient_create' %}">+ Crear Paciente</a>
   <ul>
     {% for patient in patients %}
@@ -16,7 +12,6 @@
       </li>
     {% endfor %}
   </ul>
-  <a href="{% url 'home' %}">« Volver al inicio</a>
-</body>
-</html>
+{% endblock %}
+
 

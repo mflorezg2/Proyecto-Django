@@ -1,11 +1,6 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <title>Diagnósticos</title>
-</head>
-<body>
-  <a href="{% url 'home' %}">« Volver</a>
+{% extends "base.html" %}
+
+{% block content %}
   <h1>Lista de Diagnósticos</h1>
   <ul>
     {% for d in diagnoses %}
@@ -15,5 +10,5 @@
       </li>
     {% endfor %}
   </ul>
-</body>
-</html>
+{% endblock %}
+

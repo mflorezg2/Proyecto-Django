@@ -1,18 +1,13 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <title>Exámenes</title>
-</head>
-<body>
-  <a href="{% url 'home' %}">« Volver</a>
+{% extends "base.html" %}
+
+{% block content %}
   <h1>Lista de Exámenes</h1>
   <ul>
     {% for exam in exams %}
       <li>{{ exam.exam_name }} – {{ exam.exam_date }}</li>
     {% endfor %}
   </ul>
-</body>
-</html>
+{% endblock %}
+
 
 
